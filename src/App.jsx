@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import Header from "./components/Header";
 import BookList from "./components/BookList";
+import AddBook from "./components/AddBook";
 
 function App() {
 
@@ -32,19 +32,23 @@ function App() {
     setBooks(books.filter((book) => book.id !== id));
   }
 
+function handleAddBook(newBook) {
+  setBooks((previousBooks) => [...previousBooks, newBook]);
+}
+
   // 3. Display components
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <Header />
 
-      <main className="max-w-5xl mx-auto mt-8">
-        <BookList
-          books={books}
-          onDelete={handleDelete}
-        />
+      <main className="max-w-5xl mx-auto mt-8 space-y-6">
+        <BookList books={books} onDelete={handleDelete}/>
+        <AddBook onAddBook={handleAddBook}/>
       </main>
     </div>
   );
+
 }
+
 
 export default App;
