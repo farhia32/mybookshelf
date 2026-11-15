@@ -3,11 +3,15 @@ import Header from "./components/Header";
 import BookList from "./components/BookList";
 import AddBook from "./components/AddBook";
 import SearchBar from "./components/SearchBar.jsx";
+import EditBook from "./components/EditBook";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
 
   // 1.Books state
+
+  const [editingBook, setEditingBook] = useState(null);
+
   const [books, setBooks] = useState([
     {
       id: 1,
@@ -41,21 +45,38 @@ function App() {
     );
   }
 
-   const filteredBooks = books.filter((book) => {
-    return (
-      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      book.category.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-  
+
 // 2. Delete Function
 
   function handleAddBook(newBook) {
     setBooks((previousBooks) => [...previousBooks, newBook]);
   }
 
-// 3.Display Components
+// 3. Edit Function
+function handleEdit(book) {
+  setEditingBook(book);
+}
+
+ // Save updated book information
+  function handleUpdateBook(updatedBook) {
+    setBooks((previousBooks) =>
+      previousBooks.map((book) =>
+        book.id === updatedBook.id ? updatedBook : book
+      )
+    );
+
+    setEditingBook(null);
+  }
+
+ const filteredBooks = books.filter((book) => {
+    return (
+      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.category.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
+
+// 4.Display Components
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
@@ -64,12 +85,14 @@ function App() {
       <main className="max-w-5xl mx-auto mt-8 space-y-6">
         <AddBook onAddBook={handleAddBook} />
 
+ {editingBook && ( <EditBook book={editingBook} onUpdateBook={handleUpdateBook} onCancel={() => setEditingBook(null)}/> )}
+
         <SearchBar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
         />
 
-        <BookList books={filteredBooks} onDelete={handleDelete} />
+        <BookList books={filteredBooks} onDelete={handleDelete}  onEdit={handleEdit}/>
       </main>
     </div>
   );

@@ -1,6 +1,6 @@
-import { BookOpen, Trash2 } from "lucide-react";
+import { BookOpen, Trash2, Pencil } from "lucide-react";
 
-function BookItem({ book, onDelete }) {
+function BookItem({ book, onDelete, onEdit }) {
   return (
     <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm border border-gray-200">
 
@@ -26,7 +26,17 @@ function BookItem({ book, onDelete }) {
             {book.category}
           </span>
         </div>
-      </div>
+        </div>
+
+      <div className="flex items-center gap-3">
+{/*Edit Button*/}
+<button
+  onClick={() => onEdit(book)}
+  className="text-blue-500 hover:text-blue-700 transition"
+  aria-label={`Edit ${book.title}`}
+>
+  <Pencil size={20} />
+</button>
 
       {/* Delete button */}
       <button
@@ -38,6 +48,8 @@ function BookItem({ book, onDelete }) {
       </button>
 
     </div>
+</div>
+
   );
 }
 
