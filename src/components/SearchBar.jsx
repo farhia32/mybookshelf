@@ -1,8 +1,4 @@
-import{ useState} from "react";
-
-function SearchBar() {
-
-const [searchTerm, setSearchTerm] =useState("")
+function SearchBar( {searchTerm, setSearchTerm}) {
 
   return (
     <div>
