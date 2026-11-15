@@ -15,15 +15,21 @@ function App() {
     },
     {
       id: 2,
-      title: "Rich Dad Poor Dad",
-      author: "Robert Kiyosaki",
-      category: "Finance",
+      title: "I Hope This Finds You",
+      author: "Ann Liang",
+      category: "Romance",
     },
      {
     id: 3,
     title: "The Alchemist",
     author: "Paulo Coelho",
     category: "Fiction",
+  },
+   {
+    id: 4,
+    title: "A Good Girl Guide To Murder",
+    author: "Holy Jackson",
+    category: "Mystery",
   },
   ]);
 
