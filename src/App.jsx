@@ -28,9 +28,11 @@ function App() {
   ]);
 
   // 2. Delete function
-  function handleDelete(id) {
-    setBooks(books.filter((book) => book.id !== id));
-  }
+ function handleDelete(id) {
+  setBooks((previousBooks) =>
+    previousBooks.filter((book) => book.id !== id)
+  );
+}
 
 function handleAddBook(newBook) {
   setBooks((previousBooks) => [...previousBooks, newBook]);
@@ -42,8 +44,8 @@ function handleAddBook(newBook) {
       <Header />
 
       <main className="max-w-5xl mx-auto mt-8 space-y-6">
-        <BookList books={books} onDelete={handleDelete}/>
         <AddBook onAddBook={handleAddBook}/>
+        <BookList books={books} onDelete={handleDelete}/>
       </main>
     </div>
   );
