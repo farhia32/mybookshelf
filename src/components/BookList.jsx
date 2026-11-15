@@ -1,9 +1,9 @@
 import BookItem from "./BookItem";
 
-function BookList({ books }) {
+function BookList({ books, onDelete }) {
   return (
     <div className="space-y-4">
-{books.map((book) => (<BookItem key={book.id} book={book} />
+{books.map((book) => (<BookItem key={book.id} book={book}  onDelete={onDelete}/>
 ))}
     </div>
   );
