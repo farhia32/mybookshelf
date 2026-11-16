@@ -21,7 +21,7 @@ function EditBook({ book, onUpdateBook, onCancel }) {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-      <h2 className="text-xl font-bold mb-4">Edit Book</h2>
+      <h2 className="text-lg sm:text-xl font-bold mb-4 text-gray-800">Edit Book</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input type="text"  value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Book title" className="w-full border rounded-lg p-2" />

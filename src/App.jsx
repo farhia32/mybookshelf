@@ -79,10 +79,10 @@ function handleEdit(book) {
 // 4.Display Components
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 px-4 py-4 sm:px-6 sm:py-6">
       <Header />
 
-      <main className="max-w-5xl mx-auto mt-8 space-y-6">
+      <main className="w-full max-w-5xl mx-auto mt-6 sm:mt-8 space-y-5 sm:space-y-6">
         <AddBook onAddBook={handleAddBook} />
 
  {editingBook && ( <EditBook book={editingBook} onUpdateBook={handleUpdateBook} onCancel={() => setEditingBook(null)}/> )}
