@@ -1,16 +1,75 @@
-# React + Vite
+# MyBookshelf 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MyBookshelf is a simple and responsive book management application built with React. It allows users to organize and manage their personal book collections.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **View Books:** Display a collection of books with their titles, authors, and categories.
+- **Add Books:** Add new books to your collection.
+- **Edit Books:** Update existing book information.
+- **Delete Books:** Remove books from your collection.
+- **Search Books:** Search by book title, author, or category.
+- **Responsive Design:** Works on desktop, tablet, and mobile screens.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- JavaScript
+- Vite
+- Tailwind CSS
+- Lucide React Icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these steps to run the project locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Navigate to the Project Folder
+
+```bash
+cd mybookshelf
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal to view the application.
+
+## Project Structure
+
+
+mybookshelf/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── BookItem.jsx
+│   │   ├── BookList.jsx
+│   │   ├── AddBook.jsx
+│   │   ├── EditBook.jsx
+│   │   └── SearchBar.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── README.md
+
+
+## Author
+
+Created as a personal React learning project.
